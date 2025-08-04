@@ -16,13 +16,14 @@ JPA를 활용한 upgrade 일정 관리 앱 서버를 만드는 것이 목표인 
 
 ### 💬 댓글(comment)
 
-| Method | Endpoint | 설명 | 요청 예시 | 응답 예시 | 상태 코드 |
-|---|---|---|---|---|---|
-|POST|/schedules/{scheduleId}/comments | 댓글 생성 | `{"content":"댓글", "name":"김영희"}` | `{"id":5, "content":"댓글", "name":"김영희", "scheduleId":10}` | 201 Created |
-|GET |/schedules/{scheduleId}/comments/{commentId}| 댓글 단건 조회 | - |  `{"id":5, "content":"댓글", "name":"김영희", "scheduleId":10}` | 200 OK |
-|GET|/schedules/{scheduleId}/comments| 댓글 전체 조회 | - |  `[{"id":5, "content":"댓글", "name":"김영희", "scheduleId":10}]` | 200 OK |
-|PUT|/schedules/{scheduleId}/comments/{commentId}| 댓글 수정 | `{"content":"수정된 댓글"}` | `{"id":5, "content":"수정된 댓글", "name":"김영희", "scheduleId":10}` | 200 OK |
-|DELETE|	/schedules/{scheduleId}/comments/{commentId} | 댓글 삭제 | - | - | 204 No Content |
+| Method | Endpoint | 설명                    | 요청 예시 | 응답 예시                                                                                                                   | 상태 코드 |
+|---|---|-----------------------|---|-------------------------------------------------------------------------------------------------------------------------|---|
+|POST|/schedules/{scheduleId}/comments | 댓글 생성                 | `{"content":"댓글", "name":"김영희"}` | `{"id":5, "content":"댓글", "name":"김영희", "scheduleId":10}`                                                               | 201 Created |
+|GET |/schedules/{scheduleId}/comments/{commentId}| 댓글 단건 조회              | - | `{"id":5, "content":"댓글", "name":"김영희", "scheduleId":10}`                                                               | 200 OK |
+|GET|/schedules/{scheduleId}/comments| 특정 schedules의 댓글 전체 조회 | - | `[{"id":5, "content":"댓글", "name":"김영희", "scheduleId":10}]`                                                             | 200 OK |
+|GET|/schedules/comments| 댓글 전체 조회              | - | `[{"id":5, "content":"댓글", "name":"김영희", "scheduleId":10}, {"id":5, "content":"댓글 내용", "name":"김철수", "scheduleId":11}]` | 200 OK |
+|PUT|/schedules/{scheduleId}/comments/{commentId}| 댓글 수정                 | `{"content":"수정된 댓글"}` | `{"id":5, "content":"수정된 댓글", "name":"김영희", "scheduleId":10}`                                                           | 200 OK |
+|DELETE|	/schedules/{scheduleId}/comments/{commentId} | 댓글 삭제                 | - | -                                                                                                                       | 204 No Content |
 
 ### 👥 유저(User)
 

@@ -75,4 +75,11 @@ public class CommentServiceImpl implements CommentService {
 
         commentRepository.delete(comment);
     }
+
+    @Override
+    public List<CommentResponseDto> findAllComments() {
+        return commentRepository.findAll().stream()
+                .map(CommentResponseDto::new)
+                .toList();
+    }
 }

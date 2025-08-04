@@ -11,4 +11,5 @@ public interface CommentService {
     List<CommentResponseDto> findAll(Long scheduleId);
     CommentResponseDto update(Long scheduleId, Long commentId, CommentRequestDto requestDto);
     void delete(Long scheduleId, Long commentId);
+    List<CommentResponseDto> findAllComments();
 }
